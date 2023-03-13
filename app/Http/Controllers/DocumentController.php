@@ -13,7 +13,12 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        //
+        // $documents = Document::paginate(50);
+        $documents = Document::simplePaginate(10);
+
+        return view('Document/index', [
+            'documents' => $documents,
+        ]);
     }
 
     /**
