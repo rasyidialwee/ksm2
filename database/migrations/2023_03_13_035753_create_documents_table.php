@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->date('tarikh_diterbitkan');
+            $table->dateTime('tarikh_diterbitkan');
             $table->string('nama_penulis');
             $table->string('disahkan_oleh');
             $table->date('tarikh_disahkan');

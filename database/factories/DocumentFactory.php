@@ -17,11 +17,11 @@ class DocumentFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => fake()->name(),
-            'tarikh_diterbitkan' => fake()->date(),
-            'nama_penulis' => fake()->firstName(),
-            'disahkan_oleh' => fake()->lastName(),
-            'tarikh_disahkan' => fake()->date()
+            'nama' => fake('ms_MY')->name(),
+            'tarikh_diterbitkan' => fake('ms_MY')->dateTimeBetween('-23 years', 'now',),
+            'nama_penulis' => fake('ms_MY')->firstName(),
+            'disahkan_oleh' => fake('ms_MY')->lastName(),
+            'tarikh_disahkan' => fake('ms_MY')->date(),
         ];
     }
 }
