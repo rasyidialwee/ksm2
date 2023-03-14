@@ -12,7 +12,7 @@
     <form action="{{ route('documents.store') }}" method="post">
         @csrf
         <input type="text" name="nama">
-        <input type="datetime" name="tarikh_diterbitkan">
+        <input type="date" name="tarikh_diterbitkan">
         <input type="text" name="nama_penulis">
         <input type="text" name="disahkan_oleh">
         <input type="date" name="tarikh_disahkan">
