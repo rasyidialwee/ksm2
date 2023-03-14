@@ -26,7 +26,7 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        //
+        return view('Document/create');
     }
 
     /**
@@ -66,6 +66,7 @@ class DocumentController extends Controller
      */
     public function destroy(Document $document)
     {
-        //
+        $document->delete();
+        return back();
     }
 }

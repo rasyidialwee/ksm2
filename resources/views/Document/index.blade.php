@@ -10,6 +10,7 @@
 
 <body>
     <h1>Senarai dokumen-dokumen </h1>
+    <a href="{{ route('documents.create') }}">Dokumen Baru</a>
 
     <table border="1">
         <thead>
@@ -27,10 +28,10 @@
                     <td>{{ $document->nama }}</td>
                     <td>{{ $document->tarikh_diterbitkan }}</td>
                     <td>
-                        <form action="/" method="post">
+                        <form action="{{ route('documents.delete', $document) }}" method="post">
                             @csrf
                             @method('delete')
-                            <input type="hidden" name="document" value="{{ $document }}">
+
                             <button type="submit">Delete</button>
                         </form>
                     </td>

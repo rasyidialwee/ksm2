@@ -32,6 +32,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [DocumentController::class, 'index']);
+Route::delete('documents/{document}', [DocumentController::class, 'destroy'])->name('documents.delete');
+Route::get('documents/create', [DocumentController::class, 'create'])->name('create');
 
 // Route::method('url',response);
 // response => function, controller,
