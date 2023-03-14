@@ -43,7 +43,7 @@ class DocumentController extends Controller
         $document->tarikh_disahkan = $request->tarikh_disahkan;
         $document->save();
 
-        return back();
+        return to_route('documents.index');
     }
 
     /**
