@@ -17,6 +17,7 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Tarikh Diterbitkan</th>
+                <th>Tindakan</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,14 @@
                     <td>{{ $documents->firstItem() + $loop->index }}</td>
                     <td>{{ $document->nama }}</td>
                     <td>{{ $document->tarikh_diterbitkan }}</td>
+                    <td>
+                        <form action="/" method="post">
+                            @csrf
+                            @method('delete')
+                            <input type="hidden" name="document" value="{{ $document }}">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
