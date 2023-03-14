@@ -28,6 +28,7 @@
                     <td>{{ $document->nama }}</td>
                     <td>{{ $document->tarikh_diterbitkan }}</td>
                     <td>
+                        <a href="{{ route('documents.edit', $document) }}">Edit</a>
                         <form action="{{ route('documents.delete', $document) }}" method="post">
                             @csrf
                             @method('delete')

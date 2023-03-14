@@ -35,6 +35,8 @@ Route::get('/', [DocumentController::class, 'index'])->name('documents.index');
 Route::delete('documents/{document}', [DocumentController::class, 'destroy'])->name('documents.delete');
 Route::get('documents/create', [DocumentController::class, 'create'])->name('documents.create');
 Route::post('/', [DocumentController::class, 'store'])->name('documents.store');
+Route::get('documents/{document}/edit', [DocumentController::class, 'edit'])->name('documents.edit');
+Route::patch('/', [DocumentController::class, 'update'])->name('documents.update');
 
 
 // Route::method('url',response);

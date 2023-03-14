@@ -59,7 +59,9 @@ class DocumentController extends Controller
      */
     public function edit(Document $document)
     {
-        //
+        return view('Document/edit', [
+            'document' => $document
+        ]);
     }
 
     /**
@@ -67,7 +69,14 @@ class DocumentController extends Controller
      */
     public function update(UpdateDocumentRequest $request, Document $document)
     {
-        //
+        $document->nama = $request->nama;
+        $document->tarikh_diterbitkan = $request->tarikh_diterbitkan;
+        $document->nama_penulis = $request->nama_penulis;
+        $document->disahkan_oleh = $request->disahkan_oleh;
+        $document->tarikh_disahkan = $request->tarikh_disahkan;
+        $document->save();
+
+        return to_route('documents.index');
     }
 
     /**
