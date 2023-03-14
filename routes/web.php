@@ -36,7 +36,7 @@ Route::delete('documents/{document}', [DocumentController::class, 'destroy'])->n
 Route::get('documents/create', [DocumentController::class, 'create'])->name('documents.create');
 Route::post('/', [DocumentController::class, 'store'])->name('documents.store');
 Route::get('documents/{document}/edit', [DocumentController::class, 'edit'])->name('documents.edit');
-Route::patch('/', [DocumentController::class, 'update'])->name('documents.update');
+Route::patch('documents/{document}/', [DocumentController::class, 'update'])->name('documents.update');
 
 
 // Route::method('url',response);
