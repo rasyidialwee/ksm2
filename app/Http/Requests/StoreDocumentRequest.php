@@ -22,7 +22,11 @@ class StoreDocumentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama' => 'required|string',
+            'tarikh_diterbitkan' => 'required',
+            'nama_penulis' => 'required',
+            'disahkan_oleh' => 'required',
+            'tarikh_disahkan' => 'required',
         ];
     }
 }

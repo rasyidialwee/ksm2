@@ -34,7 +34,6 @@ class DocumentController extends Controller
      */
     public function store(StoreDocumentRequest $request)
     {
-        // dd($request->all());
         $document = new Document();
         $document->nama = $request->nama;
         $document->tarikh_diterbitkan = $request->tarikh_diterbitkan;

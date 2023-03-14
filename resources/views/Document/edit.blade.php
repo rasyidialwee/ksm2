@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="{{ route('documents.update') }}" method="post">
+    <form action="{{ route('documents.update', $document) }}" method="post">
         @csrf
         @method('patch')
         <input type="text" value="{{ $document->nama }}" name="nama">

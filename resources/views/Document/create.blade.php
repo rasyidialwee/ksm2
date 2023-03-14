@@ -9,10 +9,19 @@
 </head>
 
 <body>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form action="{{ route('documents.store') }}" method="post">
         @csrf
         <input type="text" name="nama">
-        <input type="date" name="tarikh_diterbitkan">
+        <input type="datetime-local" name="tarikh_diterbitkan">
         <input type="text" name="nama_penulis">
         <input type="text" name="disahkan_oleh">
         <input type="date" name="tarikh_disahkan">
