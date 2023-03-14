@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,22 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index', [
-        'name' => 'Abu',
-        'workplace' => 'Kementerian Sumber Manusia',
-    ]);
-    // // return view('welcome');
-    // // $x = 2;
-    // // $y = $x * 2;
-    // // return $x + $y;
+// Route::get('/', function () {
+//     return view('index', [
+//         'name' => 'Abu',
+//         'workplace' => 'Kementerian Sumber Manusia',
+//     ]);
+//     // // return view('welcome');
+//     // // $x = 2;
+//     // // $y = $x * 2;
+//     // // return $x + $y;
 
-    // // view()
-    // // inertia()
-    // //livewire()
+//     // // view()
+//     // // inertia()
+//     // //livewire()
 
-    // return $data;
-});
+//     // return $data;
+// });
+
+Route::get('/', [DocumentController::class, 'index'])->name('documents.index');
+Route::delete('documents/{document}', [DocumentController::class, 'destroy'])->name('documents.delete');
+Route::get('documents/create', [DocumentController::class, 'create'])->name('documents.create');
+Route::post('/', [DocumentController::class, 'store'])->name('documents.store');
+Route::get('documents/{document}/edit', [DocumentController::class, 'edit'])->name('documents.edit');
+Route::patch('documents/{document}/', [DocumentController::class, 'update'])->name('documents.update');
+
 
 // Route::method('url',response);
 // response => function, controller,
